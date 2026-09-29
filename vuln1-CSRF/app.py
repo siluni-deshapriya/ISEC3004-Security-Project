@@ -90,5 +90,21 @@ def logout():
     session.clear() # clear session/cookie
     return redirect(url_for("login")) # go to /login
 
+@app.route("/admin") # demo purpose
+def admin():
+    rows = ""
+    for name, info in accounts.items():
+        rows += f"<tr><td>{name}</td><td>${info['balance']}</td></tr>"
+
+    return f"""
+        <h2>Admin - All Account Balances</h2>
+        <table border="1" cellpadding="10">
+            <tr><th>Account</th><th>Balance</th></tr>
+            {rows}
+        </table>
+        <br>
+        <a href="/dashboard">Back to Dashboard</a>
+    """
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
