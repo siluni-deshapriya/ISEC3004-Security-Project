@@ -1,3 +1,4 @@
+import logging
 from flask import Flask, request, session, redirect, url_for
 
 app = Flask(__name__)
@@ -69,6 +70,13 @@ def dashboard():
 # Any POST to /transfer with a valid session cookie is
 # trusted and executed. this is the CSRF flaw.
 
+logging.basicConfig(
+    filename = "transfer.log",
+    level = logging.INFO,
+    format = "%(asctime)s - %(message)s"
+    
+)
+
 @app.route("/transfer", methods=["POST"]) # Transfer code page - Transfer happens and display status
 def transfer():
     if "user" not in session: # if no user in session
@@ -77,12 +85,23 @@ def transfer():
     sender = session["user"]  # Get the user name from session
     to = request.form["to"] # get the "to account" name from the form
     amount = int(request.form["amount"]) # get the "Ammount" from the form
-
+    
+#Detection and Tracing logging
+    origin = request.headers.get("Origin", "N/A") # get the origin header from the request
+    referer = request.headers.get("Referer", "N/A") # get the referer header from the request   
+    
+    logging.info(
+        f"Transfer Attempt user = {sender}, to={to} amount={amount}"
+        f"Origin={origin}, Referer={referer} ip={request.remote_addr}"
+    )
+    
     if accounts[sender]["balance"] >= amount and to in accounts: # check if user balance >= amount transfering AND the "to account" username is in fake db
         accounts[sender]["balance"] -= amount # decrease the amount from user
         accounts[to]["balance"] += amount # increase the amount from target
+        logging.info(f"Transfer Successful user = {sender}, to={to} amount={amount}")
         return f"Transferred ${amount} to {to}. <a href='/dashboard'>Back</a>" #Confirmation and link to /dashboard
 
+    logging.info(f"Transfer Failed user = {sender}, to={to} amount={amount}")
     return "Transfer failed. <a href='/dashboard'>Back</a>" # Transfer fail
 
 @app.route("/logout") # logout
