@@ -1,3 +1,4 @@
+import os 
 import logging
 from flask import Flask, request, session, redirect, url_for
 
@@ -69,6 +70,9 @@ def dashboard():
 # this POST came from the real dashboard form or from an attacker.
 # Any POST to /transfer with a valid session cookie is
 # trusted and executed. this is the CSRF flaw.
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+LOG_PATH = os.path.join(BASE_DIR, "transfer.log")
 
 logging.basicConfig(
     filename = "transfer.log",
