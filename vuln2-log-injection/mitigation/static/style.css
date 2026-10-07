@@ -1,0 +1,70 @@
+/* page background + base font */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eef3f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #1f2d3d;
+}
+
+/* the login card */
+form {
+    background: #ffffff;
+    padding: 32px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 320px;
+}
+
+h2 {
+    color: #0b5cab;
+}
+
+/* labels + spacing */
+form p {
+    margin: 14px 0 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* the input boxes */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    border: 1px solid #cbd6e2;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0b5cab;
+}
+
+/* the button */
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 11px;
+    background-color: #0b5cab;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #09487f;
+}
+h3 {
+    color: #5a6b7b;
+    font-weight: normal;
+    margin-bottom: 4px;
+}
