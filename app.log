@@ -1,0 +1,6 @@
+2026-10-07 20:20:05 WARNING Failed login for user: Siluni
+2026-10-07 20:20:05 WARNING Failed login for user: attacker
+2026-10-07 20:20:05 INFO Successful login for user: admin
+2026-10-07 20:20:58 WARNING Failed login for user: Siluni
+2026-10-07 20:20:58 WARNING failed login attempt with invalid username format (Input rejected)
+2026-10-07 20:21:40 INFO Successful login for user: admin
