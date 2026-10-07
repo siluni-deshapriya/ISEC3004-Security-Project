@@ -1,0 +1,29 @@
+2026-10-08 00:29:52,045 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-10-08 00:29:52,045 - [33mPress CTRL+C to quit[0m
+2026-10-08 00:29:52,046 -  * Restarting with stat
+2026-10-08 00:29:52,206 -  * Debugger is active!
+2026-10-08 00:29:52,210 -  * Debugger PIN: 145-770-815
+2026-10-08 00:30:05,699 - 127.0.0.1 - - [08/Oct/2026 00:30:05] "GET / HTTP/1.1" 200 -
+2026-10-08 00:30:07,538 - 127.0.0.1 - - [08/Oct/2026 00:30:07] "GET /login HTTP/1.1" 200 -
+2026-10-08 00:30:13,924 - 127.0.0.1 - - [08/Oct/2026 00:30:13] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-10-08 00:30:13,929 - 127.0.0.1 - - [08/Oct/2026 00:30:13] "GET /dashboard HTTP/1.1" 200 -
+2026-10-08 00:30:29,371 - CSRF attempt blocked. Origin=null, Referer=N/A
+2026-10-08 00:30:29,372 - 127.0.0.1 - - [08/Oct/2026 00:30:29] "[31m[1mPOST /transfer HTTP/1.1[0m" 403 -
+2026-10-08 00:30:46,795 - 127.0.0.1 - - [08/Oct/2026 00:30:46] "[35m[1mPOST /transfer HTTP/1.1[0m" 500 -
+2026-10-08 00:30:46,813 - 127.0.0.1 - - [08/Oct/2026 00:30:46] "GET /transfer?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-10-08 00:30:46,818 - 127.0.0.1 - - [08/Oct/2026 00:30:46] "GET /transfer?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-10-08 00:30:46,852 - 127.0.0.1 - - [08/Oct/2026 00:30:46] "GET /transfer?__debugger__=yes&cmd=resource&f=console.png&s=pVxEwFlYBzpkfysOciyS HTTP/1.1" 200 -
+2026-10-08 00:30:46,861 - 127.0.0.1 - - [08/Oct/2026 00:30:46] "GET /transfer?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-10-08 00:32:21,768 - Transfer Attempt user = victim, to=victim amount=100Origin=http://127.0.0.1:5000, Referer=http://127.0.0.1:5000/dashboard ip=127.0.0.1
+2026-10-08 00:32:21,768 - Transfer Successful user = victim, to=victim amount=100
+2026-10-08 00:32:21,768 - 127.0.0.1 - - [08/Oct/2026 00:32:21] "POST /transfer HTTP/1.1" 200 -
+2026-10-08 00:32:36,727 - Transfer Attempt user = victim, to=victim amount=100Origin=http://127.0.0.1:5000, Referer=http://127.0.0.1:5000/dashboard ip=127.0.0.1
+2026-10-08 00:32:36,727 - Transfer Successful user = victim, to=victim amount=100
+2026-10-08 00:32:36,728 - 127.0.0.1 - - [08/Oct/2026 00:32:36] "POST /transfer HTTP/1.1" 200 -
+2026-10-08 00:32:51,221 - 127.0.0.1 - - [08/Oct/2026 00:32:51] "[35m[1mPOST /transfer HTTP/1.1[0m" 500 -
+2026-10-08 00:32:51,233 - 127.0.0.1 - - [08/Oct/2026 00:32:51] "[36mGET /transfer?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-10-08 00:32:51,235 - 127.0.0.1 - - [08/Oct/2026 00:32:51] "[36mGET /transfer?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-10-08 00:32:51,247 - 127.0.0.1 - - [08/Oct/2026 00:32:51] "[36mGET /transfer?__debugger__=yes&cmd=resource&f=console.png&s=pVxEwFlYBzpkfysOciyS HTTP/1.1[0m" 304 -
+2026-10-08 00:32:51,259 - 127.0.0.1 - - [08/Oct/2026 00:32:51] "[36mGET /transfer?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-10-08 00:33:15,649 - 127.0.0.1 - - [08/Oct/2026 00:33:15] "GET /dashboard HTTP/1.1" 200 -
