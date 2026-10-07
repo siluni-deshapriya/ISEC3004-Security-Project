@@ -1,3 +1,4 @@
+import os
 import logging
 from flask import Flask, request, render_template
 import re 
@@ -20,10 +21,11 @@ def sanitize_for_log(value: str) -> str:
 
     return value.replace("\r", "\\r").replace("\n", "\\n")
 
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+LOG_PATH = os.path.join(BASE_DIR, "app.log")
 
 # send logs to app.log; record INFO level and above
-logging.basicConfig(filename="app.log", level=logging.INFO,
+logging.basicConfig(filename=LOG_PATH, level=logging.INFO,
                     format="%(asctime)s %(levelname)s %(message)s",
                     datefmt="%Y-%m-%d %H:%M:%S")
 
